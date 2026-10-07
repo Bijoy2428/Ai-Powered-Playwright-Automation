@@ -1,0 +1,47 @@
+{
+  "name": "daraz-automation",
+  "version": "1.0.0",
+  "description": "Playwright + TypeScript POM UI automation for daraz.com.bd",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:smoke": "playwright test --project=chromium --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:auth": "playwright test --project=chromium-auth",
+    "auth:save": "tsx scripts/save-auth.ts",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --project=chromium --debug",
+    "lint": "eslint .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "e2e",
+    "page-object-model",
+    "test-automation",
+    "daraz"
+  ],
+  "author": "Bijoy2428",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "dotenv": "^18.0.6",
+    "eslint": "^10.12.0",
+    "eslint-plugin-playwright": "^2.12.1",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9",
+    "typescript-eslint": "^8.71.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
