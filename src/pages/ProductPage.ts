@@ -1,7 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 import { step } from '../utils/step';
 import { BasePage } from './BasePage';
-import { LoginModal } from '../components/LoginModal';
 import { parsePrice } from '../utils/price';
 
 export class ProductPage extends BasePage {
@@ -16,7 +15,6 @@ export class ProductPage extends BasePage {
   readonly quantityDecrease: Locator;
   readonly buyNowButton: Locator;
   readonly addToCartButton: Locator;
-  readonly loginModal: LoginModal;
 
   constructor(page: Page) {
     super(page);
@@ -29,7 +27,6 @@ export class ProductPage extends BasePage {
     this.quantityDecrease = page.locator('.next-number-picker-handler-down');
     this.buyNowButton = page.getByRole('button', { name: 'Buy Now' });
     this.addToCartButton = page.getByRole('button', { name: 'Add to Cart' });
-    this.loginModal = new LoginModal(page);
   }
 
   @step()

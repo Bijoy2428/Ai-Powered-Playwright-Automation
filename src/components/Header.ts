@@ -17,6 +17,12 @@ export class Header {
     this.signupLink = page.locator('#anonSignup a');
   }
 
+  /** Opens the login popup. The sticky logo bar overlaps the top links, so a forced click is needed. */
+  @step()
+  async openLogin(): Promise<void> {
+    await this.loginLink.click({ force: true });
+  }
+
   @step()
   async search(keyword: string): Promise<void> {
     await this.searchInput.fill(keyword);

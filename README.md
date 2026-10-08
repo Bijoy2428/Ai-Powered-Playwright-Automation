@@ -70,27 +70,32 @@ flowchart LR
 
 ## ✅ Test Coverage
 
-| Area        | Scenario                                                  | Tags                |
-| ----------- | --------------------------------------------------------- | ------------------- |
-| **Home**    | Page loads with the correct title                         | `@smoke`            |
-|             | Header shows search bar, cart, login and sign-up links    | `@smoke`            |
-| **Search**  | Search returns results for several keywords (data-driven) | `@smoke`            |
-|             | Search via the SEARCH button                              |                     |
-|             | Result titles are relevant to the keyword                 | `@regression`       |
-|             | Sort by price low → high (prices actually verified)       | `@regression`       |
-|             | Sort by price high → low (prices actually verified)       | `@regression`       |
-|             | Pagination to page 2 shows different products             | `@regression`       |
-| **Product** | Opens the same product that was clicked                   | `@smoke`            |
-|             | Shows price, Buy Now and Add to Cart                      | `@smoke`            |
-|             | Quantity picker increments and decrements                 | `@regression`       |
-|             | Guest "Add to Cart" opens the login modal                 | `@regression`       |
-| **Login**   | Login form renders with social login options              | `@smoke`            |
-|             | Empty submit shows required-field errors                  | `@regression`       |
-|             | Invalid credentials are rejected                          | `@regression`       |
-|             | Guest visiting the cart is redirected to login            | `@regression`       |
-| **Cart**    | Logged-in user opens the cart / adds a product            | needs saved session |
+| Area        | Scenario                                                   | Tags                |
+| ----------- | ---------------------------------------------------------- | ------------------- |
+| **Home**    | Page loads with the correct title                          | `@smoke`            |
+|             | Header shows search bar, cart, login and sign-up links     | `@smoke`            |
+| **Search**  | Search returns results for several keywords (data-driven)  | `@smoke`            |
+|             | Search via the SEARCH button                               |                     |
+|             | Result titles are relevant to the keyword                  | `@regression`       |
+|             | Sort by price low → high (prices actually verified)        | `@regression`       |
+|             | Sort by price high → low (prices actually verified)        | `@regression`       |
+|             | Pagination to page 2 shows different products              | `@regression`       |
+| **Product** | Opens the same product that was clicked                    | `@smoke`            |
+|             | Shows price, Buy Now and Add to Cart                       | `@smoke`            |
+|             | Quantity picker increments and decrements                  | `@regression`       |
+|             | Guest "Add to Cart" opens the login modal                  | `@regression`       |
+| **Login**   | Login form renders with social login options               | `@smoke`            |
+|             | Empty submit flags both fields as required                 | `@regression`       |
+|             | Only the empty field is flagged (data-driven)              | `@regression`       |
+|             | Field error clears once the field is filled                | `@regression`       |
+|             | Password show / hide toggle                                | `@regression`       |
+|             | Invalid credentials trigger bot protection, user stays out | `@regression`       |
+|             | "Forgot Password?" and "Register" links navigate correctly | `@regression`       |
+|             | Header LOGIN opens the login popup, popup can be closed    | `@smoke`            |
+|             | Guest visiting the cart is redirected to login             | `@regression`       |
+| **Cart**    | Logged-in user opens the cart / adds a product             | needs saved session |
 
-**36 tests passing** across Chromium and Firefox (2 skipped until a session is saved).
+**52 tests** across Chromium and Firefox (+2 logged-in cart tests that run once a session is saved).
 
 ## 📊 Reports
 
@@ -135,7 +140,7 @@ cp .env.example .env    # optional: set HEADLESS=false to watch the browser
 Daraz protects login with a slider CAPTCHA, and this project deliberately does **not** automate around it. Save a session once by hand, then reuse it:
 
 ```bash
-npm run auth:save   # a browser opens: log in manually, then click "Resume" in the Inspector
+npm run auth:save   # a browser opens: log in manually — the session is saved automatically
 npm run test:auth   # runs *.auth.spec.ts with the saved session
 ```
 

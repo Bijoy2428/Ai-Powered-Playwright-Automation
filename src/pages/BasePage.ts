@@ -1,6 +1,7 @@
 import { Page } from '@playwright/test';
 import { step } from '../utils/step';
 import { Header } from '../components/Header';
+import { LoginModal } from '../components/LoginModal';
 
 /**
  * Common behaviour shared by every page object.
@@ -8,9 +9,12 @@ import { Header } from '../components/Header';
  */
 export abstract class BasePage {
   readonly header: Header;
+  /** Login popup — can be opened from any page (header LOGIN, Add to Cart as guest, …). */
+  readonly loginModal: LoginModal;
 
   protected constructor(protected readonly page: Page) {
     this.header = new Header(page);
+    this.loginModal = new LoginModal(page);
   }
 
   /** Relative (to baseURL) or absolute URL of the page. */
