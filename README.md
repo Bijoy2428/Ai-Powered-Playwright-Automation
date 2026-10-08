@@ -6,13 +6,13 @@
 
 Built with **Playwright + TypeScript** using the **Page Object Model**, with cross-browser runs, CI/CD on GitHub Actions and a published HTML report.
 
-[![E2E Tests](https://github.com/Bijoy2428/Ai-powered-automation/actions/workflows/playwright.yml/badge.svg)](https://github.com/Bijoy2428/Ai-powered-automation/actions/workflows/playwright.yml)
+[![E2E Tests](https://github.com/Bijoy2428/Ai-Powered-Playwright-Automation/actions/workflows/playwright.yml/badge.svg)](https://github.com/Bijoy2428/Ai-Powered-Playwright-Automation/actions/workflows/playwright.yml)
 ![Playwright](https://img.shields.io/badge/Playwright-1.63-2EAD33?logo=playwright&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
 ![Node](https://img.shields.io/badge/Node-%3E%3D20-339933?logo=node.js&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
-[Live Test Report](https://bijoy2428.github.io/Ai-powered-automation/) · [Test Coverage](#-test-coverage) · [Getting Started](#-getting-started)
+[Live Test Report](https://bijoy2428.github.io/Ai-Powered-Playwright-Automation/) · [Test Coverage](#-test-coverage) · [Getting Started](#-getting-started)
 
 </div>
 
@@ -110,8 +110,8 @@ flowchart LR
 **Prerequisites:** Node.js 20+
 
 ```bash
-git clone https://github.com/Bijoy2428/Ai-powered-automation.git
-cd Ai-powered-automation
+git clone https://github.com/Bijoy2428/Ai-Powered-Playwright-Automation.git
+cd Ai-Powered-Playwright-Automation
 npm ci
 npx playwright install chromium firefox
 cp .env.example .env    # optional: set HEADLESS=false to watch the browser
